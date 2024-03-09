@@ -16,16 +16,76 @@
 .pipe {
     position: absolute;
     bottom: 0;
-    width: 80px;
-    animation: pipe-animation 5s;
+    width: 58px;
+    left: 100px;
+    animation: pipe-animation 5s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 500ms infinite ease-out;
 }
 
 @keyframes pipe-animation {
     from {
-      right: 0;
+      right: -80px;
     }
 
     to {
      right: 100%;
     }
+}
+
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    10% {
+        bottom: 320px;
+    }
+
+    20% {
+        bottom: 310px;
+    }
+
+
+    30% {
+        bottom: 290px;
+    }
+
+    40% {
+        bottom: 280px;
+    }
+
+    50% {
+        bottom: 270px;
+    }
+
+    60% {
+        bottom: 260px;
+    }
+
+    70% {
+        bottom: 250px;
+    }
+
+    80% {
+        bottom: 240px;
+    }
+
+    90% {
+        bottom: 230;
+    }
+
+    100% {
+        bottom: 0;
+    }
+
 }
