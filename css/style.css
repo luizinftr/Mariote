@@ -17,7 +17,6 @@
     position: absolute;
     bottom: 0;
     width: 58px;
-    left: 100px;
     animation: pipe-animation 5s infinite linear;
 }
 
