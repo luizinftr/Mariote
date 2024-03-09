@@ -14,6 +14,30 @@
     background: linear-gradient(#90BFF5, #E6EFF9);
 }
 
+*{
+    margin: 0;
+    podding: 0;
+    box-sizing: border-box;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+  border-bottom: 30px solid red;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+}
+
+button {
+    background: blue;
+    color: aqua;
+    font-weight: bold;
+    font-size: 1.5rem;
+    bolder: none;
+}
+
 .pipe {
     position: absolute;
     bottom: 0;
