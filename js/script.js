@@ -3,6 +3,7 @@ const pipe = document.querySelector('.pipe');
 const gameBoard = document.querySelector('.game-board')
 const gameOver = document.querySelector('.game-over')
 const audioGameOver = new Audio('../assets/audio/gameover.mp3')
+const audioJump = new Audio('../assets/audio/jump.mp3')
 const btn = document.querySelector('button')
 let timeId 
 
@@ -18,7 +19,7 @@ const restartGame = () => {
 }
 const jump = () => {
 mario.classList.add('jump');
-
+audioJump.play()
 setTimeout(() => {
 
    mario.classList.remove('jump');

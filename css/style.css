@@ -42,11 +42,11 @@ body {
 
 button {
     background: blue;
+    border: 2px solid red;
     text-transform: uppercase;
     color: red;
     font-weight:900;
     font-size: 1.5rem;
-    border: none;
     border-radius: 10%;
     padding: 1rem;
     cursor: pointer;
