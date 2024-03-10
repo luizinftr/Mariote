@@ -79,22 +79,28 @@ button:hover {
     animation: jump 500ms infinite ease-out;
 }
 
+.clouds-container {
+    position: relative;
+    width: 200%; /* Dobre a largura para acomodar duas instâncias de nuvens */
+    height: 100%;
+    overflow: hidden;
+}
+
 .clouds {
     position: absolute;
-    width: 1250px;
-    height: 250px;
+    width: 100%; /* Cada instância ocupa metade da largura */
+    height: 100%;
     animation: clouds-animation 40s infinite linear;
 }
 
 @keyframes clouds-animation {
-   from {
-    right: -1250px;
-   }
+    0% {
+        transform: translateX(0);
+    }
 
-   to {
-    right: 100%;
-   }
-
+    100% {
+        transform: translateX(-50%); /* Mova para a esquerda por metade da largura */
+    }
 }
 
 @keyframes pipe-animation {
