@@ -2,10 +2,12 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const gameBoard = document.querySelector('.game-board')
 const gameOver = document.querySelector('.game-over')
+const score = document.querySelector('.scorevalue')
 const audioGameOver = new Audio('../assets/audio/gameover.mp3')
 const audioJump = new Audio('../assets/audio/jump.mp3')
 const btn = document.querySelector('button')
 let timeId 
+let scoreId
 
 const restartGame = () => {
    gameBoard.style.filter = 'none'
@@ -15,7 +17,11 @@ const restartGame = () => {
    mario.style.bottom = '0px';
    gameOver.style.display = 'none';
    btn.style.display = 'none'
+   score.textContent = '00'
    GameStart()
+   scoreId = setInterval(() => {
+      score.textContent = +score.textContent + 10;
+  }, 2000);
 }
 const jump = () => {
 mario.classList.add('jump');
@@ -28,7 +34,6 @@ setTimeout(() => {
 }
 
 const GameStart = () => {
-   console.log('ok'+timeId)
    clearTimeout(timeId)
    const pipePosition = pipe.offsetLeft;
    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
@@ -41,13 +46,12 @@ const GameStart = () => {
       gameOver.style.display = 'flex'
    //   mario.style.animation = 'none'; 
      mario.style.bottom = `${marioPosition}px`;
-
+      clearInterval(scoreId)
      mario.src = './assets/images/mario-game.over.png';
      mario.style.width = '150px'
      setTimeout(()=>{btn.style.display = 'flex'}, 5000)
      return
    }
-
    timeId = setTimeout(()=>{GameStart()}, 10)
 
 }
@@ -57,3 +61,7 @@ document.addEventListener('keydown', ({keyCode})=>{
    }
 });
 GameStart()
+
+scoreId = setInterval(()=>{
+   score.textContent = +score.textContent + 10
+}, 2000)
